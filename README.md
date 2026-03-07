@@ -1,90 +1,59 @@
-StudyMate AI
-<div align="center">
+# 🧠 StudyMate AI — AI Study Assistant
 
-AI-powered study assistant that summarizes notes, generates practice questions, and creates study plans.
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask)
+![AI](https://img.shields.io/badge/AI-NLP-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
+AI-powered study assistant that summarizes notes, generates practice questions, answers questions, and creates structured study plans.
 
-Report Bug
- ·
-Request Feature
- ·
-View Repository
+👤 Author
 
-</div>
-Table of Contents
+Mikhail Simanian — Computer Science Student
+📍 Ottawa, Canada — Carleton University
 
-About The Project
+GitHub:
+https://github.com/mikhail0777
 
-Built With
+🔗 Project Links
 
-Features
+⚠️ Note: This project runs locally using Python & Flask.
 
-Screenshots
+Repository:
+https://github.com/mikhail0777/StudyMate-AI
 
-Getting Started
+🚀 Project Overview
 
-Installation
+StudyMate AI is a lightweight AI-powered study assistant that helps students process course material faster.
 
-Usage
+Users can paste lecture notes, textbook content, or study material and automatically generate:
 
-Project Structure
+• concise summaries
+• practice questions
+• contextual answers
+• structured study plans
 
-Author
+The goal of the project is to demonstrate how modern NLP tools can be integrated into a simple web application to improve learning workflows.
 
-License
+✨ Core Features
+📄 Text Summarization
 
-About The Project
+Convert long lecture notes into clear and concise summaries for faster revision.
 
-StudyMate AI is a lightweight AI-powered study assistant that helps students process and understand course material more efficiently.
+❓ Practice Question Generator
 
-The application allows users to paste lecture notes, textbook content, or study material and automatically generate:
+Automatically generate review questions from study material to test understanding.
 
-concise summaries
+💬 Context-Based Question Answering
 
-practice questions
+Ask questions about the text and receive AI-generated answers based on the context.
 
-contextual answers
+🧠 AI Study Plan Generator
 
-structured study plans
+Create structured study plans to organize revision sessions.
 
-The goal of this project is to demonstrate how modern NLP and AI tools can be integrated into a simple web application to improve student learning workflows.
+🌐 Simple Web Interface
 
-Built With
-
-Python
-
-Flask
-
-Transformers / NLP Models
-
-HTML
-
-CSS
-
-JavaScript
-
-REST APIs
-
-Features
-Text Summarization
-
-Convert long lecture notes or study materials into clear and concise summaries for faster review.
-
-Practice Question Generator
-
-Automatically generate review questions from study content to help test understanding.
-
-Context-Based Question Answering
-
-Ask questions about the provided material and receive AI-generated answers based on the input text.
-
-AI Study Plan Generator
-
-Generate structured study plans to organize revision sessions and improve productivity.
-
-Simple Web Interface
-
-A minimal web interface built with Flask templates for easy interaction.
-
+Minimal UI built with Flask templates for quick experimentation.
 ---
 ## 🖼️ Screenshots
 
@@ -103,58 +72,25 @@ A minimal web interface built with Flask templates for easy interaction.
 🔹 **Study Plan Generator** 
 ![Study Plan Generator](./images/4.png)
 
-Getting Started
+🛠 Tech Stack
 
-To get a local copy up and running follow these steps.
+Backend
 
-Installation
+• Python
+• Flask
 
-Clone the repository
+AI / NLP
 
-git clone https://github.com/mikhail0777/StudyMate-AI.git
+• Transformers
+• Natural Language Processing models
 
-Navigate to the project folder
+Frontend
 
-cd StudyMate-AI
+• HTML
+• CSS
+• JavaScript
 
-Create a virtual environment
-
-python -m venv venv
-
-Activate the environment
-
-Windows
-
-venv\Scripts\activate
-
-Mac/Linux
-
-source venv/bin/activate
-
-Install dependencies
-
-pip install -r requirements.txt
-
-Run the application
-
-python app.py
-
-Open your browser and go to
-
-http://127.0.0.1:5000
-Usage
-
-Example ways StudyMate AI can be used:
-
-Summarizing lecture notes before exams
-
-Generating practice questions for self-testing
-
-Reviewing large blocks of text quickly
-
-Creating structured study schedules
-
-Project Structure
+📂 Project Structure
 StudyMate-AI
 │
 ├── app.py
@@ -162,11 +98,47 @@ StudyMate-AI
 ├── static/
 ├── requirements.txt
 └── README.md
-Author
+⚙️ Installation
 
-Mikhail Simanian
-Computer Science Student
-Carleton University
+Clone the repository
 
-GitHub:
-https://github.com/mikhail0777
+git clone https://github.com/mikhail0777/StudyMate-AI.git
+cd StudyMate-AI
+
+Create a virtual environment
+
+python -m venv venv
+
+Activate it
+
+Windows
+
+venv\Scripts\activate
+
+Mac / Linux
+
+source venv/bin/activate
+
+Install dependencies
+
+pip install -r requirements.txt
+
+Run the app
+
+python app.py
+
+Open in browser
+
+http://127.0.0.1:5000
+🎯 Example Use Cases
+
+StudyMate AI can help students:
+
+• summarize lecture notes before exams
+• generate practice questions for revision
+• quickly review large text blocks
+• organize structured study sessions
+
+📌 Notes
+
+This project was built as a learning project to explore AI-powered educational tools and web development with Flask.
