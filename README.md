@@ -9,18 +9,18 @@ AI-powered study assistant that summarizes notes, generates practice questions, 
 
 ---
 
-## 🏗️ Architecture Diagram
+## 🏗 Architecture Diagram
 
 ```mermaid
 flowchart TD
-    A[Student User] --> B[Web Interface<br/>HTML / CSS / JS]
-    B --> C[Flask Backend<br/>app.py]
-    C --> D[Input Processing Layer]
-    D --> E[AI / NLP Engine]
+    A[Student User] --> B[Web Interface]
+    B --> C[Flask Backend app.py]
+    C --> D[Input Processing]
+    D --> E[AI NLP Engine]
 
     E --> F[Text Summarization]
     E --> G[Practice Question Generation]
-    E --> H[Context-Based Q&A]
+    E --> H[Context Question Answering]
     E --> I[Study Plan Generation]
 
     F --> J[Generated Results]
@@ -28,7 +28,8 @@ flowchart TD
     H --> J
     I --> J
 
-    J --> K[Rendered Output in Browser]
+    J --> K[Output in Browser]
+```
 
 👤 Author
 
