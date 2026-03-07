@@ -1,11 +1,34 @@
 # 🧠 StudyMate AI — AI Study Assistant
 
+AI-powered study assistant that summarizes notes, generates practice questions, answers questions, and creates study plans.
+
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask)
 ![AI](https://img.shields.io/badge/AI-NLP-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
-AI-powered study assistant that summarizes notes, generates practice questions, answers questions, and creates structured study plans.
+---
+
+## 🏗️ Architecture Diagram
+
+```mermaid
+flowchart TD
+    A[Student User] --> B[Web Interface<br/>HTML / CSS / JS]
+    B --> C[Flask Backend<br/>app.py]
+    C --> D[Input Processing Layer]
+    D --> E[AI / NLP Engine]
+
+    E --> F[Text Summarization]
+    E --> G[Practice Question Generation]
+    E --> H[Context-Based Q&A]
+    E --> I[Study Plan Generation]
+
+    F --> J[Generated Results]
+    G --> J
+    H --> J
+    I --> J
+
+    J --> K[Rendered Output in Browser]
 
 👤 Author
 
