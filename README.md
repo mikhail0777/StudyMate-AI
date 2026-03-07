@@ -7,6 +7,22 @@ AI-powered study assistant that summarizes notes, generates practice questions, 
 ![AI](https://img.shields.io/badge/AI-NLP-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
+
+
+👤 Author
+
+Mikhail Simanian — Computer Science Student
+📍 Ottawa, Canada — Carleton University
+
+GitHub:
+https://github.com/mikhail0777
+
+🔗 Project Links
+
+⚠️ Note: This project runs locally using Python & Flask.
+
+Repository:
+https://github.com/mikhail0777/StudyMate-AI
 ---
 
 ## 🏗 Architecture Diagram
@@ -30,22 +46,6 @@ flowchart TD
 
     J --> K[Output in Browser]
 ```
-
-👤 Author
-
-Mikhail Simanian — Computer Science Student
-📍 Ottawa, Canada — Carleton University
-
-GitHub:
-https://github.com/mikhail0777
-
-🔗 Project Links
-
-⚠️ Note: This project runs locally using Python & Flask.
-
-Repository:
-https://github.com/mikhail0777/StudyMate-AI
-
 🚀 Project Overview
 
 StudyMate AI is a lightweight AI-powered study assistant that helps students process course material faster.
