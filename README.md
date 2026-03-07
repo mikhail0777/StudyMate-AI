@@ -1,6 +1,42 @@
-StudyMate AI is a lightweight AI-powered study assistant designed to help students process, organize, and understand course material more efficiently.
+StudyMate AI
+<div align="center">
 
-The application allows users to paste lecture notes, textbook content, or study material and instantly generate:
+AI-powered study assistant that summarizes notes, generates practice questions, and creates study plans.
+
+Report Bug
+ ·
+Request Feature
+ ·
+View Repository
+
+</div>
+Table of Contents
+
+About The Project
+
+Built With
+
+Features
+
+Screenshots
+
+Getting Started
+
+Installation
+
+Usage
+
+Project Structure
+
+Author
+
+License
+
+About The Project
+
+StudyMate AI is a lightweight AI-powered study assistant that helps students process and understand course material more efficiently.
+
+The application allows users to paste lecture notes, textbook content, or study material and automatically generate:
 
 concise summaries
 
@@ -10,80 +46,44 @@ contextual answers
 
 structured study plans
 
-This project demonstrates how modern NLP and AI tools can be integrated into a simple web application to improve student learning workflows.
+The goal of this project is to demonstrate how modern NLP and AI tools can be integrated into a simple web application to improve student learning workflows.
+
+Built With
+
+Python
+
+Flask
+
+Transformers / NLP Models
+
+HTML
+
+CSS
+
+JavaScript
+
+REST APIs
 
 Features
-📄 Text Summarization
+Text Summarization
 
 Convert long lecture notes or study materials into clear and concise summaries for faster review.
 
-❓ Practice Question Generator
+Practice Question Generator
 
-Automatically generate review questions from study content to help test understanding and retention.
+Automatically generate review questions from study content to help test understanding.
 
-💬 Context-Based Question Answering
+Context-Based Question Answering
 
 Ask questions about the provided material and receive AI-generated answers based on the input text.
 
-🧠 AI Study Plan Generator
+AI Study Plan Generator
 
-Create structured study schedules to organize revision sessions and improve productivity.
+Generate structured study plans to organize revision sessions and improve productivity.
 
-🌐 Simple Web Interface
+Simple Web Interface
 
-A minimal and clean UI built with Flask templates for quick interaction and fast experimentation.
-
-Tech Stack
-Technology	Purpose
-Python	Core backend language
-Flask	Web application framework
-Transformers / NLP models	Text processing and AI features
-HTML / CSS / JavaScript	Frontend interface
-REST APIs	AI service integration
-Project Structure
-StudyMate-AI
-│
-├── app.py                # Main Flask application
-├── templates/            # HTML page templates
-├── static/               # CSS and JavaScript files
-├── requirements.txt      # Python dependencies
-└── README.md
-Installation
-1️⃣ Clone the repository
-git clone https://github.com/mikhail0777/StudyMate-AI.git
-cd StudyMate-AI
-2️⃣ Create a virtual environment
-python -m venv venv
-3️⃣ Activate the virtual environment
-
-Windows
-
-venv\Scripts\activate
-
-Mac / Linux
-
-source venv/bin/activate
-4️⃣ Install dependencies
-pip install -r requirements.txt
-5️⃣ Run the application
-python app.py
-
-Open your browser and navigate to:
-
-http://127.0.0.1:5000
-Example Use Cases
-
-StudyMate AI can assist students in multiple ways:
-
-Summarizing lecture notes before exams
-
-Generating practice questions for self-testing
-
-Quickly reviewing large blocks of text
-
-Creating structured study schedules
-
-Improving understanding of complex course material
+A minimal web interface built with Flask templates for easy interaction.
 
 ---
 ## 🖼️ Screenshots
@@ -103,20 +103,70 @@ Improving understanding of complex course material
 🔹 **Study Plan Generator** 
 ![Study Plan Generator](./images/4.png)
 
----
+Getting Started
 
-## Author
+To get a local copy up and running follow these steps.
+
+Installation
+
+Clone the repository
+
+git clone https://github.com/mikhail0777/StudyMate-AI.git
+
+Navigate to the project folder
+
+cd StudyMate-AI
+
+Create a virtual environment
+
+python -m venv venv
+
+Activate the environment
+
+Windows
+
+venv\Scripts\activate
+
+Mac/Linux
+
+source venv/bin/activate
+
+Install dependencies
+
+pip install -r requirements.txt
+
+Run the application
+
+python app.py
+
+Open your browser and go to
+
+http://127.0.0.1:5000
+Usage
+
+Example ways StudyMate AI can be used:
+
+Summarizing lecture notes before exams
+
+Generating practice questions for self-testing
+
+Reviewing large blocks of text quickly
+
+Creating structured study schedules
+
+Project Structure
+StudyMate-AI
+│
+├── app.py
+├── templates/
+├── static/
+├── requirements.txt
+└── README.md
+Author
 
 Mikhail Simanian
-
 Computer Science Student
 Carleton University
 
----
-
-## Disclaimer
-
-This project is a personal educational project created to explore AI-powered learning tools and web application development.
-
-
-
+GitHub:
+https://github.com/mikhail0777
