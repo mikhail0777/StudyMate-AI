@@ -4,6 +4,7 @@
 ![Flask](https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask)
 ![AI](https://img.shields.io/badge/AI-NLP-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
+
 AI-powered study assistant that summarizes notes, generates practice questions, answers questions, and creates structured study plans.
 
 👤 Author
