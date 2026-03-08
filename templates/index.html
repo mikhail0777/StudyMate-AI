@@ -3,149 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Study Tools</title>
+    <title>StudyMate AI</title>
     <style>
-        /* General Styles */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f4f4f9, #e2e2e9);
-            color: #333;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f8fc, #e9eef7);
+            color: #1f2937;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
+        .page-wrapper {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 48px 20px 32px;
+        }
+
+        .hero {
             text-align: center;
+            margin-bottom: 42px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #2c3e50;
-            animation: fadeIn 1s ease-in-out;
+        .hero h1 {
+            margin: 0 0 14px;
+            font-size: 2.8rem;
+            color: #172554;
         }
 
-        /* Tool Grid */
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
         .tool-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
         }
 
-        .tool-box {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideUp 0.5s ease-in-out;
+        .tool-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 28px 24px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            text-align: left;
         }
 
-        .tool-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        .tool-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
         }
 
-        .tool-box h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #34495e;
+        .tool-card h2 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            color: #1e3a8a;
         }
 
-        .tool-box p {
-            font-size: 1rem;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+        .tool-card p {
+            margin: 0 0 22px;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #6b7280;
         }
 
-        .tool-box a {
-            text-decoration: none;
-            color: #ffffff;
-            background-color: #3498db;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        .tool-link {
             display: inline-block;
-        }
-
-        .tool-box a:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: #ffffff;
-            text-align: center;
+            padding: 11px 18px;
             border-radius: 10px;
-            animation: fadeIn 1s ease-in-out;
+            text-decoration: none;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .tool-link:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.03);
+        }
+
+        footer {
+            margin-top: 44px;
+            padding: 22px 18px;
+            text-align: center;
+            background: #0f172a;
+            color: #e5e7eb;
+            border-radius: 16px;
         }
 
         footer p {
             margin: 0;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
-        footer span {
-            font-weight: bold;
-            color: #3498db;
+        .brand-name {
+            color: #60a5fa;
+            font-weight: 700;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
 
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to AI Study Tools</h1>
-        <div class="tool-grid">
-            <div class="tool-box">
-                <h2>Question Generator</h2>
-                <p>Generate practice questions to test your knowledge on any topic.</p>
-                <a href="/question-generator">Get Started</a>
+    <div class="page-wrapper">
+        <section class="hero">
+            <h1>StudyMate AI</h1>
+            <p>
+                A simple AI-powered study workspace built to help students review material faster,
+                generate practice questions, create summaries, and organize study sessions more efficiently.
+            </p>
+        </section>
+
+        <section class="tool-grid">
+            <div class="tool-card">
+                <h2>Practice Questions</h2>
+                <p>
+                    Turn your notes or course content into practice questions that help reinforce key ideas.
+                </p>
+                <a class="tool-link" href="/practice-questions">Open Tool</a>
             </div>
-            <div class="tool-box">
-                <h2>Summarizer Context</h2>
-                <p>Summarize long texts or articles into concise and easy-to-read notes.</p>
-                <a id="sum-a-down" href="/summarizer">Get Started</a>
+
+            <div class="tool-card">
+                <h2>Quick Summary</h2>
+                <p>
+                    Convert long passages into shorter, clearer summaries for faster revision and review.
+                </p>
+                <a class="tool-link" href="/summary">Open Tool</a>
             </div>
-            <div class="tool-box">
-                <h2>Question Answering</h2>
-                <p>Get instant answers to your questions with AI-powered assistance.</p>
-                <a href="/answer-question">Get Started</a>
+
+            <div class="tool-card">
+                <h2>Ask From Notes</h2>
+                <p>
+                    Provide study material and ask a question to get an answer based on the context you entered.
+                </p>
+                <a class="tool-link" href="/ask">Open Tool</a>
             </div>
-            <div class="tool-box">
-                <h2>Study Plan Generator</h2>
-                <p>Create a personalized study plan tailored to your goals and schedule.</p>
-                <a href="/study-plan">Get Started</a>
+
+            <div class="tool-card">
+                <h2>Study Planner</h2>
+                <p>
+                    Build a structured study schedule using your topics, timeline, and target deadline.
+                </p>
+                <a class="tool-link" href="/study-plan">Open Tool</a>
             </div>
-        </div>
-        <!-- Footer with Created by -->
+        </section>
+
         <footer>
-            <p>Created by <span id="username">YourUsername</span></p>
+            <p>Built by <span class="brand-name">Mikhail Simanian</span></p>
         </footer>
     </div>
-
-    <script>
-        // Dynamically set the username
-        const username = "Jitesh Shelke"; // Replace with the actual username
-        document.getElementById("username").textContent = username;
-    </script>
 </body>
 </html>
