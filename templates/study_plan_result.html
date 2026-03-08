@@ -3,109 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Plan Result</title>
+    <title>Study Plan Result | StudyMate AI</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f4f4f9, #e2e2e9);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        * {
+            box-sizing: border-box;
         }
 
-        .result-container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            padding: 30px;
-            width: 90%;
-            max-width: 650px;
-            animation: slideUp 0.5s ease-in-out;
-            text-align: center;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f8fc, #e9eef7);
+            color: #1f2937;
+        }
+
+        .page {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
+            margin-top: 0;
+            color: #172554;
         }
 
-        pre {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #34495e;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            overflow-x: auto;
-            white-space: pre-wrap; /* Ensures text wraps properly */
-            text-align: left;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Buttons Container */
-        .buttons-container {
-            display: flex;
-            justify-content: space-between;
+        .plan-box {
             margin-top: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px;
+            line-height: 1.7;
+            white-space: pre-wrap;
         }
 
-        /* Button Styles */
-        .back-button, .home-button {
-            background-color: #3498db;
-            color: #ffffff;
+        .actions {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            border-radius: 10px;
             padding: 12px 18px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
+            font-size: 0.96rem;
+            font-weight: 600;
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .back-button:hover, .home-button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+        .btn-primary {
+            background: #2563eb;
+            color: white;
         }
 
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .buttons-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .back-button, .home-button {
-                width: 100%;
-                text-align: center;
-            }
+        .btn-primary:hover {
+            background: #1d4ed8;
         }
 
-        /* Animations */
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #1e293b;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .btn-secondary:hover {
+            background: #cbd5e1;
         }
     </style>
 </head>
 <body>
-    <div class="result-container">
-        <h1>Your Study Plan</h1>
-        <pre>{{ study_plan }}</pre>
-        <!-- Buttons Container -->
-        <div class="buttons-container">
-            <a href="/study-plan" class="back-button">← Create Another Plan</a>
-            <a href="/" class="home-button">Back to Home</a>
+    <div class="page">
+        <div class="card">
+            <h1>Your Study Plan</h1>
+
+            <div class="plan-box">{{ study_plan }}</div>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="/study-plan">Create Another Plan</a>
+                <a class="btn btn-secondary" href="/">Back to Home</a>
+            </div>
         </div>
     </div>
 </body>
