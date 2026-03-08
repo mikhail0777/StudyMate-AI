@@ -3,126 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Summarizer</title>
+    <title>Quick Summary | StudyMate AI</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f4f4f9, #e2e2e9);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        * {
+            box-sizing: border-box;
         }
 
-        .form-container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 100%;
-            max-width: 600px;
-            animation: slideUp 0.5s ease-in-out;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f8fc, #e9eef7);
+            color: #1f2937;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
+            margin-top: 0;
+            color: #172554;
         }
 
-        /* Form Styles */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        p {
+            color: #4b5563;
+            line-height: 1.6;
         }
 
         textarea {
-            width: 95.5%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
+            width: 100%;
+            min-height: 240px;
+            margin-top: 18px;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
             resize: vertical;
-            min-height: 150px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1rem;
+            font-family: inherit;
         }
 
-        textarea:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
-            outline: none;
+        .error {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+        }
+
+        .actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        button,
+        .back-link {
+            display: inline-block;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 0.96rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         button {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            background: #2563eb;
+            color: white;
         }
 
         button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+            background: #1d4ed8;
         }
 
-        /* Back to Home Button */
-        .back-to-home {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #3498db;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+        .back-link {
+            background: #e2e8f0;
+            color: #1e293b;
         }
 
-        .back-to-home:hover {
-            color: #2980b9;
-        }
-
-        /* Error Message */
-        .error-message {
-            color: #e74c3c;
-            font-size: 0.9rem;
-            text-align: center;
-            margin-top: 10px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        /* Animations */
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .back-link:hover {
+            background: #cbd5e1;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Summarize Text</h1>
-        <form method="post">
-            <textarea name="user_text" placeholder="Enter text to summarize..."></textarea>
-            <button type="submit">Summarize</button>
-        </form>
-        {% if error %}
-            <p class="error-message">{{ error }}</p>
-        {% endif %}
-        <!-- Back to Home Button -->
-        <a href="/" class="back-to-home">← Back to Home</a>
+    <div class="page">
+        <div class="card">
+            <h1>Generate a Quick Summary</h1>
+            <p>
+                Paste your notes, textbook content, or article text below to create a shorter,
+                clearer summary for review.
+            </p>
+
+            <form method="POST" action="/summary">
+                <textarea
+                    name="user_text"
+                    placeholder="Paste the text you want to summarize here..."
+                    required
+                ></textarea>
+
+                {% if error %}
+                    <div class="error">{{ error }}</div>
+                {% endif %}
+
+                <div class="actions">
+                    <button type="submit">Create Summary</button>
+                    <a class="back-link" href="/">Back to Home</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
