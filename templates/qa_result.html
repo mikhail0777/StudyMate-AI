@@ -3,94 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Answer</title>
+    <title>Answer Result | StudyMate AI</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f4f4f9, #e2e2e9);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        * {
+            box-sizing: border-box;
         }
 
-        .result-container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 100%;
-            max-width: 600px;
-            animation: slideUp 0.5s ease-in-out;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f8fc, #e9eef7);
+            color: #1f2937;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
+            margin-top: 0;
+            color: #172554;
         }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #34495e;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Buttons Container */
-        .buttons-container {
-            display: flex;
-            justify-content: space-between;
+        .answer-box {
             margin-top: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px;
+            line-height: 1.7;
         }
 
-        /* Button Styles */
-        .back-button, .home-button {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
+        .actions {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 0.96rem;
+            font-weight: 600;
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .back-button:hover, .home-button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+        .btn-primary {
+            background: #2563eb;
+            color: white;
         }
 
-        /* Animations */
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .btn-primary:hover {
+            background: #1d4ed8;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e1;
         }
     </style>
 </head>
 <body>
-    <div class="result-container">
-        <h1>Answer</h1>
-        <p>{{ answer }}</p>
-        <!-- Buttons Container -->
-        <div class="buttons-container">
-            <a href="/answer-question" class="back-button">← Generate More Questions</a>
-            <a href="/" class="home-button">Back to Home</a>
+    <div class="page">
+        <div class="card">
+            <h1>Answer</h1>
+
+            <div class="answer-box">{{ answer }}</div>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="/ask">Ask Another Question</a>
+                <a class="btn btn-secondary" href="/">Back to Home</a>
+            </div>
         </div>
     </div>
 </body>
