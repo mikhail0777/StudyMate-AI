@@ -3,113 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Answering</title>
+    <title>Ask From Notes | StudyMate AI</title>
     <style>
-        /* General Styles */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f4f4f9, #e2e2e9);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f8fc, #e9eef7);
+            color: #1f2937;
         }
 
-        .form-container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+        .page {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #172554;
+        }
+
+        p {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        textarea,
+        input {
             width: 100%;
-            max-width: 500px;
-            animation: slideUp 0.5s ease-in-out;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        /* Form Styles */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        textarea, input {
-            width: 95%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
             font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        textarea:focus, input:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
-            outline: none;
+            font-family: inherit;
         }
 
         textarea {
+            min-height: 220px;
             resize: vertical;
-            min-height: 150px;
+        }
+
+        .error {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            background: #fee2e2;
+            color: #991b1b;
+            font-weight: 600;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        button,
+        .back-link {
+            display: inline-block;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 0.96rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         button {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            background: #2563eb;
+            color: white;
         }
 
         button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+            background: #1d4ed8;
         }
 
-        /* Back to Home Button */
-        .back-to-home {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #3498db;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+        .back-link {
+            background: #e2e8f0;
+            color: #1e293b;
         }
 
-        .back-to-home:hover {
-            color: #2980b9;
-        }
-
-        /* Animations */
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .back-link:hover {
+            background: #cbd5e1;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Question Answering</h2>
-        <form method="post" action="/answer-question">
-            <textarea name="context" placeholder="Enter context (e.g., a paragraph or article)"></textarea>
-            <input type="text" name="question" placeholder="Enter your question">
-            <button type="submit">Get Answer</button>
-        </form>
-        <!-- Back to Home Button -->
-        <a href="/" class="back-to-home">← Back to Home</a>
+    <div class="page">
+        <div class="card">
+            <h1>Ask a Question From Your Notes</h1>
+            <p>
+                Paste your study material and ask a specific question. StudyMate AI will return
+                an answer based only on the context you provide.
+            </p>
+
+            <form method="POST" action="/ask">
+                <label for="context">Study Material</label>
+                <textarea
+                    id="context"
+                    name="context"
+                    placeholder="Paste your lecture notes, textbook excerpt, or reference material here..."
+                    required
+                ></textarea>
+
+                <label for="question">Your Question</label>
+                <input
+                    id="question"
+                    type="text"
+                    name="question"
+                    placeholder="Example: What is the main concept explained in this passage?"
+                    required
+                >
+
+                {% if error %}
+                    <div class="error">{{ error }}</div>
+                {% endif %}
+
+                <div class="actions">
+                    <button type="submit">Get Answer</button>
+                    <a class="back-link" href="/">Back to Home</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
