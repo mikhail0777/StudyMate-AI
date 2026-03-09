@@ -31,7 +31,14 @@
 
         h1 {
             margin-top: 0;
+            margin-bottom: 8px;
             color: #172554;
+        }
+
+        .subtitle {
+            margin: 0 0 20px 0;
+            color: #64748b;
+            font-size: 0.98rem;
         }
 
         .summary-box {
@@ -39,9 +46,16 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 18px;
-            line-height: 1.7;
+            padding: 20px;
+            line-height: 1.8;
             white-space: pre-wrap;
+            font-size: 1rem;
+        }
+
+        .summary-box.error {
+            background: #fef2f2;
+            border-color: #fecaca;
+            color: #991b1b;
         }
 
         .actions {
@@ -58,6 +72,7 @@
             font-size: 0.96rem;
             font-weight: 600;
             text-decoration: none;
+            transition: 0.2s ease;
         }
 
         .btn-primary {
@@ -83,8 +98,11 @@
     <div class="page">
         <div class="card">
             <h1>Your Summary</h1>
+            <p class="subtitle">A clean, student-friendly summary of your text.</p>
 
-            <div class="summary-box">{{ summary }}</div>
+            <div class="summary-box{% if summary.startswith('Error generating summary:') %} error{% endif %}">
+                {{ summary }}
+            </div>
 
             <div class="actions">
                 <a class="btn btn-primary" href="/summary">Summarize More Text</a>

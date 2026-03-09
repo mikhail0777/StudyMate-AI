@@ -1,1 +1,3 @@
-GEMINI_API_KEY = ""
+import os
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
